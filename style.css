@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --theme: rgb(218, 106, 15);
+  --winning-block: green;
+}
+
+body {
+  color: var(--theme);
+  font-family: "Shadows Into Light", cursive;
+}
+
+h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+.container {
+  padding: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(65, 61, 131);
+}
+
+#gameboard {
+  width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.box {
+  height: 160px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme);
+  font-size: 130px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.box:nth-child(3n) {
+  border-right: none;
+}
+
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--theme);
+  color: rgb(250, 246, 246);
+  border-color: var(--theme);
+  font-size: 20px;
+  transition: 200ms transform;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translate(-2px);
+}
