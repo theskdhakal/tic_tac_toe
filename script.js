@@ -22,12 +22,14 @@ function boxclicked(e) {
     e.target.innerText = currentPlayer;
 
     if (playerHasWon() !== false) {
-      playerText = `${currentPlayer} has won!`;
+      playerText.textContent = `${currentPlayer} has won!`;
 
       let winning_blocks = playerHasWon();
 
       winning_blocks.map(
-        (box) => (boxes[box].style.backgroundColor = winnerIndicator)
+        (box) => (boxes[box].style.backgroundColor = winnerIndicator),
+
+        boxes.forEach((box) => box.removeEventListener("click", boxclicked))
       );
       return;
     }
